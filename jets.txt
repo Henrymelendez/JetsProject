@@ -1,0 +1,2 @@
+PassengerJet,Cessna 172,20,100,12000
+FighterJet,F-14,900,1100,30000
