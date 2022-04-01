@@ -6,5 +6,6 @@ public class AirField {
 	private List<Jet> jets;
 	
 	
-	
+	public void airfield() {
+	}
 }
