@@ -7,6 +7,11 @@ public abstract class Jet {
 	private double speed;
 	private int range;
 	private long price;
+	
+	
+	public Jet() {
+		
+	}
 
 	public Jet(String model, double speed, int range, long price) {
 		super();
