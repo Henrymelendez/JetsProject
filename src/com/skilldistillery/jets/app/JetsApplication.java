@@ -58,7 +58,7 @@ public class JetsApplication {
 			
 			case 1:
 				// TODO Add Method for listing jets
-				
+				af.displayJets();
 				break;
 			
 			case 2:

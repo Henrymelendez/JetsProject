@@ -40,23 +40,24 @@ public class AirField {
 				  }
 				  else {
 					  Jet c = new CargoPlane(model, speed, range, price);
-					  jets.add(c)
-;				  }
-				  
-				  
-				  
-				  
-				  
-			    
+					  jets.add(c);
+				  }				  
 			  }
 			}
 			catch (IOException e) {
 			  System.err.println(e);
 			}
 		return jets;
-	
-		
 	} // end of loadFile
+	
+	public void displayJets() {
+		
+		for(int i = 0; i < jets.size(); i++ ) {
+			Jet printObject = jets.get(i);
+			System.out.println(printObject.toString());
+		}
+	}
+	
 	
 	
 	

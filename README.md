@@ -16,6 +16,10 @@ Jet Fleet Management
 * For / For Each loops
 * Switch Cases
 * Inheritance
+* File I/O
+* Try/ Catch
+* Exceptions
+* Hashcode / Equals
 
 
 
