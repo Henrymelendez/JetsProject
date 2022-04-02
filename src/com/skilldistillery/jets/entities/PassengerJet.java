@@ -11,7 +11,7 @@ public class PassengerJet extends Jet {
 
 	@Override
 	public void fly() {
-		//TODO add class
+		
 		System.out.println("This " + this.getModel() + " can fly at " + this.getSpeed() + " mph and can travel " + this.getRange() + " miles." );
 		
 	}

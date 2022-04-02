@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
@@ -39,10 +41,13 @@ public class AirField {
 					  Jet b = new FighterJet(model, speed, range, price);
 					  jets.add(b);
 				  }
-				  else {
+				  else if(type.contains("CargoPlane")) {
 					  Jet c = new CargoPlane(model, speed, range, price);
 					  jets.add(c);
-				  }				  
+				  }
+				  else {
+					  Jet d = new JetImpl(model, speed, range, price);
+				  }
 			  }
 			}
 			catch (IOException e) {
@@ -64,18 +69,10 @@ public class AirField {
 	public void flyFleet() {
 		
 		for (Jet jet : jets) {
-			if(jet instanceof FighterJet) {
-				jet.fly();
-			}
-			if(jet instanceof PassengerJet) {
-				jet.fly();
-			}
-			if(jet instanceof CargoPlane) {
-				jet.fly();
-			}
+			jet.fly();
 		}
 		System.out.println();
-	} // end of flyfleet
+	} // end of fly fleet
 	
 	
 	public void fastestJet() {
@@ -136,45 +133,44 @@ public class AirField {
 		Scanner sc = new Scanner(System.in);
 		
 		String type = null, model = null;
-		double speed;
-		int range;
-		long price;
+		double speed = 0;
+		int range = 0;
+		long price = 0;
 		boolean keepGoing = true;
 		do {
-			System.out.print("Are Trying to add a fighter jet, a Cargo Plane, or a Passenger Jet: ");
-			try {
-				type = sc.nextLine();
-				if(type.contains("passenger")) {
-				
-					
-				}
-				else if(type.contains("cargo")) {
-					
-				}
-				else if(type.contains("fighter")) {
-					
-				}
-				else {
-					throw new Exception(); 
-				}
-				
-			}
-			catch (Exception e) {
-				System.out.println("Please enter a valid Type");
-				System.out.println();
-				break;
-			}
-			
-			
+			System.out.print("Are Trying to add a fighter jet, a Cargo Plane, a Passenger Jet, or a custom Jet: ");
+			type = sc.nextLine();
 			
 			System.out.print("What is it's Model: ");
 			model = sc.nextLine();
+			
+			
 			System.out.print("How Fast does it go: ");
-			speed = sc.nextDouble();
-			System.out.print("How Far can it go on a single tank of fuel: ");
-			range = sc.nextInt();
-			System.out.print("How Much does it cost: ");
-			price = sc.nextLong();
+			while(!sc.hasNextDouble()) {
+				System.out.println("Please enter a number!!!");
+				System.out.println();
+				System.out.print("How Fast does it go: ");
+				sc.nextLine();
+			}
+		    speed = sc.nextDouble();
+		    
+		    System.out.print("How Far can it go on a single tank of fuel: ");
+		    while(!sc.hasNextInt()) {
+		    	System.out.println("Please Enter a valid number!!!1");
+		    	System.out.print("How Far can it go on a single tank of fuel: ");
+		    	sc.nextLine();
+		    }
+		    range = sc.nextInt();
+		    
+		    System.out.print("How Much does it cost: ");
+
+		    while(!sc.hasNextLong()) {
+		    	System.out.println("Error Please Input a Number!!!");
+		    	System.out.print("How Much does it cost: ");
+		    	sc.nextLine();
+		    }
+		    price = sc.nextLong();	
+				
 			
 			if(type.toLowerCase().startsWith("passenger")) {
 				Jet a = new PassengerJet(model, speed, range, price);
@@ -189,11 +185,31 @@ public class AirField {
 				jets.add(c);
 			}
 			else {
-				//	Jet d = new;
+				Jet d = new JetImpl(model, speed, range, price);
+				jets.add(d);
 			}
 			keepGoing = false;
 		} while(keepGoing); // end of while loop
-		sc.close();
+		System.out.println();
+
+	}
+	
+	public void removeJet() {
+		Scanner sc = new Scanner(System.in);
+		int position = 1;
+		int choice = 0;
+		int index = 0;
+		for(int i = 0; i < jets.size(); i++) {
+			Jet s = jets.get(i);
+			System.out.println(position + " Model: " + s.getModel() + " Speed: " + s.getPrice() + " Range: " + s.getRange() + " Price: " + s.getPrice());
+			position++;
+		}
+		System.out.print("Please Enter the number of the jet to remove: ");
+		choice = sc.nextInt();
+		index = choice-1;
+		jets.remove(index);
+		displayJets();
+		System.out.println();
 	}
 	
 	

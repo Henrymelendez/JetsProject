@@ -69,26 +69,21 @@ public class JetsApplication {
 				break;
 				
 			case 7:
-				// TODO method to add a jet to list
 				af.createJet();
 				break;
 			
 			case 8:
-				
-				
-				// TODO add the planes list
-
-				//TODO add a plane remover based on index;
+				af.removeJet();
 				
 				break;
 				
 			case 9: 
 				
 				System.out.println("Exting Application ..... ");
-				//TODO method to save planes to file
 				sc.close();
 				System.exit(0);
 				break;
+				
 			default : 
 				System.out.println("NOT A VALID CHOICE TRY ONE OF THE MENU OPTIONS!!!");
 				break;
