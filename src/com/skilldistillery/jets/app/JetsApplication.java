@@ -1,36 +1,23 @@
 package com.skilldistillery.jets.app;
 
-import java.util.List;
 import java.util.Scanner;
 
-import javax.annotation.processing.SupportedSourceVersion;
-
 import com.skilldistillery.jets.entities.AirField;
-import com.skilldistillery.jets.entities.CargoPlane;
-import com.skilldistillery.jets.entities.FighterJet;
-import com.skilldistillery.jets.entities.Jet;
-import com.skilldistillery.jets.entities.PassengerJet;
 
 public class JetsApplication {
 
 	public static void main(String[] args) {
 		JetsApplication japp = new JetsApplication();
 		
-		
 		japp.launch();
 		
-			
-
 	}
 	
 	private void launch() {
 		
 		displayUserMenu();
 		
-		
-		
 	}
-	
 	
 	private void displayUserMenu() {
 		
@@ -66,74 +53,31 @@ public class JetsApplication {
 				break;
 				
 			case 3:				
-				//TODO better print output
 				af.fastestJet();
 				break;
-			
-			
+				
 			case 4: 
-				//TODO add Method that returns jet with longest range 
-				
-				
+				af.longestRange();
 				break;
-				
-				
-				
+					
 			case 5:
-				
-				// TODO method to load all cargo jets
-				
-				
+				af.loadAllCargo();	
 				break;
-				
 				
 			case 6:
-				
-				
-				
-				// Method to send all fighter jets on a dog fight
-			
+				af.dogFight();
 				break;
 				
-				
 			case 7:
-				String type, model;
-				double speed;
-				int range;
-				long price;
-			
-				System.out.print("Are Trying to add a fighter jet, a Cargo Plane, or a Passenger Jet: ");
-				type = sc.nextLine();
-				System.out.print("What is it's Model: ");
-				model = sc.nextLine();
-				System.out.print("How Fast does it go: ");
-				speed = sc.nextDouble();
-				System.out.print("How Far can it go on a single tank of fuel: ");
-				range = sc.nextInt();
-				System.out.print("How Much does it cost: ");
-				price = sc.nextLong();
-				
-				if(type.toLowerCase().startsWith("passenger")) {
-					Jet a = new PassengerJet(model, speed, range, price);
-					// TODO create add method for af instance
-				}
-				else if(type.toLowerCase().startsWith("fighter")) {
-					Jet b = new FighterJet(model, speed, range, price);
-					// TODO add method 
-				}
-				else {
-					Jet c = new CargoPlane(model, speed, range, price);
-					// TODO add Method
-				}
-				
+				// TODO method to add a jet to list
+				af.createJet();
 				break;
 			
 			case 8:
-				int removePlane;
+				
 				
 				// TODO add the planes list
-				System.out.println("Which plane do you want to remove: ");
-				removePlane = sc.nextInt();
+
 				//TODO add a plane remover based on index;
 				
 				break;
@@ -142,7 +86,7 @@ public class JetsApplication {
 				
 				System.out.println("Exting Application ..... ");
 				//TODO method to save planes to file
-				
+				sc.close();
 				System.exit(0);
 				break;
 			default : 

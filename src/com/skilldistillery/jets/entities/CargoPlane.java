@@ -34,7 +34,8 @@ public class CargoPlane extends Jet implements CargoCarrier {
 
 	@Override
 	public void loadCargo() {
-		// TODO add method from user Stories 
+		 
+		System.out.println("The " + this.getModel() + " is getting loaded.");
 		
 	}
 	
