@@ -53,25 +53,21 @@ public class JetsApplication {
 			System.out.print("Enter your Menu Choice: ");
 			
 			choice = sc.nextInt();
+			System.out.println();
 			
 			switch(choice) {
 			
 			case 1:
-				// TODO Add Method for listing jets
 				af.displayJets();
 				break;
 			
 			case 2:
-				//TODO add Method for flying all jets
-				
+				af.flyFleet();
 				break;
 				
-				
-			case 3:
-				
-				//TODO add method for viewing the jet with the fastest speed 
-				
-				
+			case 3:				
+				//TODO better print output
+				af.fastestJet();
 				break;
 			
 			

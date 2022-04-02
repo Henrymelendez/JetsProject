@@ -56,7 +56,40 @@ public class AirField {
 			Jet printObject = jets.get(i);
 			System.out.println(printObject.toString());
 		}
+		System.out.println();
 	}
+	
+	
+	public void flyFleet() {
+		
+		for (Jet jet : jets) {
+			if(jet instanceof FighterJet) {
+				jet.fly();
+			}
+			if(jet instanceof PassengerJet) {
+				jet.fly();
+			}
+			if(jet instanceof CargoPlane) {
+				jet.fly();
+			}
+		}
+		System.out.println();
+	} // end of flyfleet
+	
+	
+	public void fastestJet() {
+		double max = 0.0;
+		int index = 0;
+		
+		for(int i = 0; i < jets.size(); i++) {
+			if(jets.get(i).getSpeed() > max) {
+				max = jets.get(i).getSpeed();
+				index = i;
+			}
+		}
+		System.out.println(jets.get(index).toString());
+		
+	}// end of fastest 
 	
 	
 	
