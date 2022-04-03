@@ -86,5 +86,5 @@ Quit exits the program.
 
 
 ## Lessons Learned 
-This one of the largest so far i have built one of my major design choices was to keep the main class clean of any method that did not display the menu or launch the application. i built the airfield fucntionalty into the airfield class to keep other classes clean i encapsulated a lot of the code. Keeping the Code DRY was a challenge as i reduced code to make it readable i have to make design choice to make it DRY. 
+This one of the largest so far i have built one of my major design choices was to keep the main class clean of any method that did not display the menu or launch the application. i built the airfield fucntionalty into the airfield class to keep other classes clean i encapsulated a lot of the code. Keeping the Code DRY was a challenge as i reduced code to make it readable i have to make design choice to make it DRY. This project help me learn to draw out you application before writng any code on the IDE it was real eye opener.
 
