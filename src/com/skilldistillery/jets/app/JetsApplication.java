@@ -35,7 +35,7 @@ public class JetsApplication {
 			System.out.print("5.) Load all Cargo Jets \n");
 			System.out.print("6.) Dogfight! \n");
 			System.out.print("7.) Add a jet to Fleet \n");
-			System.out.print("8.) Remove a jet from Flett \n");
+			System.out.print("8.) Remove a jet from Fleet \n");
 			System.out.print("9.) Quit \n");
 			System.out.print("Enter your Menu Choice: ");
 			
